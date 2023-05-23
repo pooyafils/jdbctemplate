@@ -19,4 +19,10 @@ public class TableInfoController {
         tableInfoRepository.createTable(tableName,cloums);
         return ResponseEntity.ok("table has been created");
     }
+    @GetMapping("/tableFind")
+    public ResponseEntity tableExits(@RequestParam String tableName){
+
+        return ResponseEntity.ok(tableInfoRepository.tableExits(tableName));
+
+    }
 }
