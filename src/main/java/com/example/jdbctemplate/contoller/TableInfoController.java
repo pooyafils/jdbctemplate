@@ -38,4 +38,9 @@ public class TableInfoController {
     public ResponseEntity<List<Employee>> findAll(){
         return new ResponseEntity<>(employeeRepository.getAllEmployees(), HttpStatus.ACCEPTED);
     }
+
+    @GetMapping("/id")
+    public ResponseEntity findById(@RequestParam int id){
+        return new ResponseEntity<>(employeeRepository.getEmployeeById(String.valueOf(id)), HttpStatus.ACCEPTED);
+    }
 }
