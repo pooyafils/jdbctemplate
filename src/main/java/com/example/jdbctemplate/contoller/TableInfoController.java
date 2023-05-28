@@ -41,6 +41,8 @@ public class TableInfoController {
 
     @GetMapping("/id")
     public ResponseEntity findById(@RequestParam int id){
+      Employee e=  employeeRepository.getEmployeeById(String.valueOf(id));
+      e.getEmpId();
         return new ResponseEntity<>(employeeRepository.getEmployeeById(String.valueOf(id)), HttpStatus.ACCEPTED);
     }
 }
